@@ -10,7 +10,6 @@ export const Login = () => {
   const handler = (event) => {
     event.preventDefault();
     setUser(userName, password);
-    console.log(userName, password);
   };
   return (
     <div>
