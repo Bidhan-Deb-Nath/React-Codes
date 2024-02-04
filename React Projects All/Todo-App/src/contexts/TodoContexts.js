@@ -1,7 +1,6 @@
 /** @format */
 
 import { createContext, useContext } from "react";
-
 export const TodoContext = createContext({
   todos: [
     {
@@ -10,10 +9,10 @@ export const TodoContext = createContext({
       completed: false,
     },
   ],
-  addTodo: () => {},
-  updateTodo: () => {},
-  deleteTodo: () => {},
-  toggleComplete: () => {},
+  addTodo: () => { },
+  updateTodo: () => { },
+  deleteTodo: () => { },
+  toggleComplete: () => { },
 });
 
 export const useTodo = () => {

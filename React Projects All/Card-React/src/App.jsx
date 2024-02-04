@@ -8,7 +8,7 @@ import PersonCard from "../src/components/PersonCard";
 //   { name: "Bidhan Deb Nath", jobTitle: "Web Developer", imageUrl: "../src/j.jpg" },
 
   // Add details for Person 2 to Person 10
-];
+// ];
 
 const App = () => {
   return (

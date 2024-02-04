@@ -1,31 +1,31 @@
 /** @format */
 
 import { useState } from "react";
-import { useTodo } from "../contexts/TodoContexts";
+import { useTodo } from "../context/Context";
 
-function TodoList({todo}) {
+function TodoItem({ todo }) {
   const [isTodoEditable, setIsTodoEditable] = useState(false);
   const [todoMsg, setTodoMsg] = useState(todo.todo);
-  const { updateTodo, deleteTodo, toggleComplete } = useTodo();
+  const { update, remove, check } = useTodo();
 
-  const editTodo = () => {
-    updateTodo(todo.id, { ...todo, todo: todoMsg });
+  const edit = () => {
+    update(todo.id, { ...todo, todo: todoMsg });
     setIsTodoEditable(false);
   };
-  const toggleCompleted = () => {
-    toggleComplete(todo.id);
+  const toggle = () => {
+    check(todo.id);
   };
   return (
     <div
       className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${
-        todo.completed ? "bg-[#c6e9a7]" : "bg-[#ccbed7]"
+        todo.complete ? "bg-[#c6e9a7]" : "bg-[#ccbed7]"
       }`}
     >
       <input
         type="checkbox"
         className="cursor-pointer"
-        checked={todo.completed}
-        onChange={toggleCompleted}
+        checked={todo.complete}
+        onChange={toggle}
       />
       <input
         type="text"
@@ -43,7 +43,7 @@ function TodoList({todo}) {
           if (todo.completed) return;
 
           if (isTodoEditable) {
-            editTodo();
+            edit();
           } else setIsTodoEditable((prev) => !prev);
         }}
         disabled={todo.completed}
@@ -53,7 +53,7 @@ function TodoList({todo}) {
       {/* Delete Todo Button */}
       <button
         className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
-        onClick={() => deleteTodo(todo.id)}
+        onClick={() => remove(todo.id)}
       >
         ❌
       </button>
@@ -61,4 +61,4 @@ function TodoList({todo}) {
   );
 }
 
-export default TodoList;
+export default TodoItem;

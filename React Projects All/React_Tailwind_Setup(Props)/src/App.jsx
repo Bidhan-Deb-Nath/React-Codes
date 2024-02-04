@@ -2,7 +2,7 @@
 
 import MessageComponents from "./Components/MessageComponents";
 import Bidhan from "../src/assets/images/MY_IMAGE.png";
-import Kabba from "../src/assets/images/Kabba.png";
+import Urmi from "../src/assets/images/urmi.jpg";
 
 function App({ myImage }) {
   return (
@@ -15,10 +15,10 @@ function App({ myImage }) {
           myImage={Bidhan}
         />
         <MessageComponents
-          username={"Kabba Paul"}
-          job_taitle={"Oracle Developer"}
+          username={"Urmi Datta (Paku)"}
+          job_taitle={"Java Developer"}
           button_name={"Message me"}
-          myImage={Kabba}
+          myImage={Urmi}
         />
       </div>
     </>
